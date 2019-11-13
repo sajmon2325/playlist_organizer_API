@@ -24,10 +24,10 @@ public class Playlist {
     private Long id;
 
     @Column(name = "playlist_name")
-    private String playlist_name;
+    private String playlistName;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "playlist")
-    private Set<Track> playlist_tracks = new HashSet<>();
+    private Set<Track> playlistTracks = new HashSet<>();
 
     @Enumerated(value = EnumType.STRING)
     private Rating rating;

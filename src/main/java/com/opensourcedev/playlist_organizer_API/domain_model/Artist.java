@@ -24,7 +24,7 @@ public class Artist {
     private Long id;
 
     @Column(name = "artist_name")
-    private String artist_name;
+    private String artistName;
 
     @OneToMany(mappedBy = "artist")
     private List<Genre> genres = new ArrayList<Genre>();
