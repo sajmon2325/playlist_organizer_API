@@ -33,7 +33,7 @@ public class Track {
     @Column(name = "track_year")
     private int track_year;
 
-    @JoinColumn(name = "playlist_id")
+    @ManyToOne
     private Playlist playlist;
 
     @OneToMany

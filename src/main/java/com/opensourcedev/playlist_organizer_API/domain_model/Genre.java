@@ -4,6 +4,8 @@ import lombok.*;
 import org.springframework.context.annotation.Profile;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "genres")
@@ -23,7 +25,9 @@ public class Genre {
     private GenreTypes genreTypes;
 
 //    @JoinColumn(name = "artist_id")
-    private Artist artist;
+    @OneToMany
+    @JoinColumn(name = "artist_id")
+    private Set<Artist> artist = new HashSet<>();
 
 
 }
