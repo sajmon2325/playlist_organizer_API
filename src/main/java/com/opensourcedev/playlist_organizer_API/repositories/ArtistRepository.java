@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ArtistRepository extends CrudRepository<Artist, Long> {
 
-    Artist findByartistName(String artistName);
+    Artist findByArtistName(String artistName);
     Artist findByGenre(Genre genre);
     Artist findByTrack(Track track);
 

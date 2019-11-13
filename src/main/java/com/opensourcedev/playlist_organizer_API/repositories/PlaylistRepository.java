@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PlaylistRepository extends CrudRepository<Playlist, Long> {
 
-    Playlist findByplaylistName(String playlistName);
+    Playlist findByPlaylistName(String playlistName);
     Playlist findByRating(Rating rating);
 
 }
