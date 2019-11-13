@@ -21,17 +21,17 @@ public class Track {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "track_name")
-    private String track_name;
+    @Column(name = "track_Name")
+    private String trackName;
 
     @Column(name = "track_format")
-    private String track_format;
+    private String trackFormat;
 
     @Column(name = "track_length")
-    private Long track_length;
+    private Long trackLength;
 
     @Column(name = "track_year")
-    private int track_year;
+    private int trackYear;
 
     @ManyToOne
     private Playlist playlist;
