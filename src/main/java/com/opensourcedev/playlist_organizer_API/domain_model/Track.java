@@ -7,9 +7,9 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+@Profile("test")
 @Entity
 @Table(name = "tracks")
-@Profile("test")
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder

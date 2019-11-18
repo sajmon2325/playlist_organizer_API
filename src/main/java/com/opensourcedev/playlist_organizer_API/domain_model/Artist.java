@@ -9,9 +9,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+@Profile("test")
 @Entity
 @Table(name = "artists")
-@Profile("test")
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder

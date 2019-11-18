@@ -10,9 +10,9 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+@Profile("test")
 @Entity
 @Table(name = "playlists")
-@Profile("test")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
