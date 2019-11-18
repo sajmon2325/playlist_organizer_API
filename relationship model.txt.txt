@@ -1,0 +1,53 @@
+entity Playlist{
+	id Long
+    playlistName String
+    playlistTracks Set<Track>
+    rating Rating
+}
+
+entity Artist{
+	id Long
+    artistName String
+    genres List<Genre>
+    track Set<Track>
+}
+
+entity Track{
+	id Long
+    trackName String
+    trackFormat String
+    trackLength Long
+    trackYear int
+    playlist Playlist
+    artist Set<Artist> 
+}
+
+entity Genre{
+	id Long
+    genreTypes GenreTypes
+    artist Set<Artist>
+}
+
+enum GenreTypes{
+	POP, RAP, EPIC_MUSIC,
+    ROCK, HARD_ROCK, FOLK_METAL, HEAVY_METAL, DEATH_METAL, MELODIC_METAL, ALTERNATIVE_METAL
+}
+
+enum Rating{
+	STANDARD, GOOD, AWESOME, EPIC, LEGENDARY
+}
+
+relationship OneToMany{
+	Playlist to Track{playlist}
+    Track to Artist{artist}
+}
+
+relationship OneToMany{
+	Artist to Genre{artist},
+    Artist to Track{artist},
+    Artist to Genre{artist}
+}
+
+relationship ManyToOne{
+	Track to Playlist{playlist}
+}
