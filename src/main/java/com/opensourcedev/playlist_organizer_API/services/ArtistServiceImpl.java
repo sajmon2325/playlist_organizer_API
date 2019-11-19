@@ -6,10 +6,12 @@ import com.opensourcedev.playlist_organizer_API.domain_model.Track;
 import com.opensourcedev.playlist_organizer_API.repositories.ArtistRepository;
 import com.opensourcedev.playlist_organizer_API.repositories.GenreRepository;
 import com.opensourcedev.playlist_organizer_API.repositories.TrackRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
 
+@Service
 public class ArtistServiceImpl implements ArtistService {
 
     private final ArtistRepository artistRepository;

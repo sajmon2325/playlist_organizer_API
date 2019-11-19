@@ -19,7 +19,8 @@ public class IndexController {
         sb.append("\n\nThe usage of this API is simple, just write the corresponding URL listed below into browser \n");
         sb.append("or you can map the API URL to your own GUI buttons \n\n");
         sb.append("The API URLs are listed below: \n");
-        sb.append("[1] To display the default page and manual: \"/index\" or \"/\"");
+        sb.append("[1] To display the default page and manual: \"/index\" or \"/\" \n");
+        sb.append("[2] To request all Artist: \"/artist/all\" \n");
 
         log.debug("[+]Index Controller has been called...");
         return sb.toString();
