@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Set;
+
 @Profile("test")
 @Repository
 public interface ArtistRepository extends CrudRepository<Artist, Long> {
@@ -14,5 +16,6 @@ public interface ArtistRepository extends CrudRepository<Artist, Long> {
     Artist findByArtistName(String artistName);
     Artist findByGenre(Genre genre);
     Artist findByTrack(Track track);
+    //Set<Genre> findGenresByArtist(Long id);
 
 }

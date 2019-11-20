@@ -8,7 +8,11 @@ import java.util.Set;
 
 public interface ArtistService extends CrudInterface<Artist, Long> {
 
-    Set<Genre> findAllGenres(Genre genre);
+    Set<Genre> findAllGenres();
     Set<Track> findAllTracks(Track track);
+    Artist findByArtistName(String artistName);
+    Artist findByGenre(Genre genre);
+    Artist findByTrack(Track track);
+    Set<Genre> findGenresByArtist(Long id);
 
 }

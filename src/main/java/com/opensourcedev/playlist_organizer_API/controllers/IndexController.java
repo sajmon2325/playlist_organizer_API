@@ -21,6 +21,10 @@ public class IndexController {
         sb.append("The API URLs are listed below: \n");
         sb.append("[1] To display the default page and manual: \"/index\" or \"/\" \n");
         sb.append("[2] To request all Artist: \"/artist/all\" \n");
+        sb.append("[3] To find a specific Artist: \"/artist/id\" \n");
+        sb.append("[4] To save an Artist: \"/artist/save\" \n");
+        sb.append("[5] To delete an Artist by ID: \n/artist/delete/id\" \n");
+
 
         log.debug("[+]Index Controller has been called...");
         return sb.toString();

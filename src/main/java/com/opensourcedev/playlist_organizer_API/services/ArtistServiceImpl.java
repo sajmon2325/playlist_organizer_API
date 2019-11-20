@@ -25,7 +25,29 @@ public class ArtistServiceImpl implements ArtistService {
     }
 
     @Override
-    public Set<Genre> findAllGenres(Genre genre) {
+    public Set<Genre> findGenresByArtist(Long id) {
+        Set<Genre> genres = new HashSet<>();
+        genreRepository.findGenresByArtist(id).forEach(genres::add);
+        return genres;
+    }
+
+    @Override
+    public Artist findByArtistName(String artistName) {
+        return null;
+    }
+
+    @Override
+    public Artist findByGenre(Genre genre) {
+        return null;
+    }
+
+    @Override
+    public Artist findByTrack(Track track) {
+        return null;
+    }
+
+    @Override
+    public Set<Genre> findAllGenres() {
         Set<Genre> genres = new HashSet<>();
         genreRepository.findAll().forEach(genres::add);
         return genres;
