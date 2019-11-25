@@ -24,7 +24,13 @@ public class IndexController {
         sb.append("[3] To find a specific Artist: \"/artist/id\" \n");
         sb.append("[4] To save an Artist: \"/artist/save\" \n");
         sb.append("[5] To delete an Artist by ID: \"/artist/delete/id\" \n");
-        sb.append("[6] To find Artist by Artist Name: \"/artist/artistname/artistname\"");
+        sb.append("[6] To find Artist by Artist Name: \"/artist/artistname/artistName\" \n\n\n");
+
+        sb.append("[7] To request all Tracks: \"/track/all\" \n");
+        sb.append("[8] To find a specific Track: \"/track/id\" \n");
+        sb.append("[9] To save a Track: \"/track/save\" \n");
+        sb.append("[10] To delete a Track by ID: \"/track/delete/id\" \n");
+        sb.append("[11] To find Track by Track Name: \"/track/trackname/trackName\" \n\n\n");
 
 
         log.debug("[+]Index Controller has been called...");
