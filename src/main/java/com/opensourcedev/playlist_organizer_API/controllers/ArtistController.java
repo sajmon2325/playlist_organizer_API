@@ -5,6 +5,7 @@ import com.opensourcedev.playlist_organizer_API.services.ArtistService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Profile;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,15 +23,15 @@ public class ArtistController {
         this.artistService = artistService;
     }
 
-    @GetMapping("/all")
+    @GetMapping(value = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody Set<Artist> showAllArtists(){
         log.debug("[+]Artist Controller has been called...");
         log.debug("[+]showAllArtists() has been called...");
         return artistService.findAll();
     }
 
-    @GetMapping("/{id}")
-    public @ResponseBody Artist findArtistById(@PathVariable Long id){
+    @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody Artist findArtistById(@RequestBody @PathVariable Long id){
         log.debug("[+]Artist Controller has been called...");
         log.debug("[+]findArtistById() has been called...");
         return artistService.findById(id);
@@ -45,15 +46,15 @@ public class ArtistController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public @ResponseBody ResponseEntity deleteArtistById(@PathVariable Long id){
+    public @ResponseBody ResponseEntity deleteArtistById(@RequestBody @PathVariable Long id){
         log.debug("[+]Artist Controller has been called...");
         log.debug("[+]deleteArtistById() has been called...");
         artistService.deleteById(id);
         return ResponseEntity.ok(HttpStatus.OK + " Artist has been successfully removed");
     }
 
-    @GetMapping("/artistname/{artistname}")
-    public @ResponseBody Artist findArtistByName(@PathVariable String artistname){
+    @GetMapping(value = "/artistname/{artistname}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody Artist findArtistByName(@RequestBody @PathVariable String artistname){
         log.debug("[+]Artist Controller has been called...");
         log.debug("[+]findArtistByName() has been called...");
         return artistService.findByArtistName(artistname);
