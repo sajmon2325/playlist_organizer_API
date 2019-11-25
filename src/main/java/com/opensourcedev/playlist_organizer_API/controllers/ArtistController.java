@@ -1,9 +1,6 @@
 package com.opensourcedev.playlist_organizer_API.controllers;
 
 import com.opensourcedev.playlist_organizer_API.domain_model.Artist;
-import com.opensourcedev.playlist_organizer_API.repositories.ArtistRepository;
-import com.opensourcedev.playlist_organizer_API.repositories.GenreRepository;
-import com.opensourcedev.playlist_organizer_API.services.GenreService;
 import com.opensourcedev.playlist_organizer_API.services.ArtistService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Profile;
@@ -20,11 +17,9 @@ import java.util.Set;
 public class ArtistController {
 
     private final ArtistService artistService;
-    private final GenreService genreService;
 
-    public ArtistController(ArtistService artistService, GenreService genreService) {
+    public ArtistController(ArtistService artistService) {
         this.artistService = artistService;
-        this.genreService = genreService;
     }
 
     @GetMapping("/all")
@@ -57,13 +52,11 @@ public class ArtistController {
         return ResponseEntity.ok(HttpStatus.OK + " Artist has been successfully removed");
     }
 
-    @GetMapping("/{id}/genres")
-    public @ResponseBody ResponseEntity findArtistsGenres(@PathVariable Long id){
+    @GetMapping("/artistname/{artistname}")
+    public @ResponseBody Artist findArtistByName(@PathVariable String artistname){
         log.debug("[+]Artist Controller has been called...");
-        log.debug("[+]findArtistsGenres() has been called...");
-        artistService.findGenresByArtist(id);
-        return ResponseEntity.ok(HttpStatus.OK + " All Artist genres are: "
-                + artistService.findGenresByArtist(id).toString());
+        log.debug("[+]findArtistByName() has been called...");
+        return artistService.findByArtistName(artistname);
     }
 
 
