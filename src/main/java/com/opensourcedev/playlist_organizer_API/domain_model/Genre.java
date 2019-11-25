@@ -15,6 +15,7 @@ import java.util.Set;
 @Builder
 @Getter
 @Setter
+@ToString
 public class Genre {
 
     @Id
