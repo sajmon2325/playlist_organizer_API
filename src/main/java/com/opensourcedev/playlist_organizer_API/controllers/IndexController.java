@@ -32,6 +32,12 @@ public class IndexController {
         sb.append("[10] To delete a Track by ID: \"/track/delete/id\" \n");
         sb.append("[11] To find Track by Track Name: \"/track/trackname/trackName\" \n\n\n");
 
+        sb.append("[12] To request all Genres: \"/genre/all\" \n");
+        sb.append("[13] To find a specific Genre: \"/genre/id\" \n");
+        sb.append("[13] To find all Genres of a specific Artist: \"/genre/findAll/id\" \n");
+        sb.append("[14] To save a Genre: \"/genre/save\" \n");
+        sb.append("[15] To delete a Genre by his ID: \"/genre/delete/id\" \n\n\n");
+
 
         log.debug("[+]Index Controller has been called...");
         return sb.toString();

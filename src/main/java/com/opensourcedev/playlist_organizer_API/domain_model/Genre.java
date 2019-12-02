@@ -25,7 +25,6 @@ public class Genre {
     @Enumerated(value = EnumType.STRING)
     private GenreTypes genreTypes;
 
-//    @JoinColumn(name = "artist_id")
     @OneToMany
     @JoinColumn(name = "artist_id")
     private Set<Artist> artist = new HashSet<>();
