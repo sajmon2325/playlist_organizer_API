@@ -1,16 +1,20 @@
 package com.opensourcedev.playlist_organizer_API.services;
 
+import com.opensourcedev.playlist_organizer_API.domain_model.Artist;
 import com.opensourcedev.playlist_organizer_API.domain_model.Genre;
+import com.opensourcedev.playlist_organizer_API.repositories.ArtistRepository;
 import com.opensourcedev.playlist_organizer_API.repositories.GenreRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 @Service
 public class GenreServiceImpl implements GenreService{
 
     GenreRepository genreRepository;
+    ArtistRepository artistRepository;
 
     public GenreServiceImpl(GenreRepository genreRepository) {
         this.genreRepository = genreRepository;
@@ -31,9 +35,10 @@ public class GenreServiceImpl implements GenreService{
     }
 
     @Override
-    public Set<Genre> findGenresByArtist(Long id) {
+    public Set<Genre> findGenresByArtist(Long aLong) {
         Set<Genre> genres = new HashSet<>();
-        genreRepository.findGenresByArtist(id).forEach(genres::add);
+        Optional<Artist> artist = artistRepository.findById(aLong);
+        genreRepository.findGenresByArtist(artist.get().getId()).forEach(genres::add);
         return null;
     }
 
