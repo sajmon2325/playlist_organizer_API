@@ -38,7 +38,7 @@ public class PlaylistController {
         return playlistService.findById(id);
     }
 
-    @GetMapping(value = "/{playlistname}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/playlistname/{playlistname}", produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody Playlist findPlaylistByPlaylistName(@RequestBody @PathVariable String playlistname){
         log.debug("[+] Playlist Controller has been called...");
         log.debug("[+] findPlaylistByPlaylistName() has been called...");
