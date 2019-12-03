@@ -4,12 +4,14 @@ import com.opensourcedev.playlist_organizer_API.domain_model.Artist;
 import com.opensourcedev.playlist_organizer_API.domain_model.Genre;
 import com.opensourcedev.playlist_organizer_API.repositories.ArtistRepository;
 import com.opensourcedev.playlist_organizer_API.repositories.GenreRepository;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
+@Profile("test")
 @Service
 public class GenreServiceImpl implements GenreService{
 

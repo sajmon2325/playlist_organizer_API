@@ -2,11 +2,13 @@ package com.opensourcedev.playlist_organizer_API.services;
 
 import com.opensourcedev.playlist_organizer_API.domain_model.Track;
 import com.opensourcedev.playlist_organizer_API.repositories.TrackRepository;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
 
+@Profile("test")
 @Service
 public class TrackServiceImpl implements TrackService {
 

@@ -3,11 +3,13 @@ package com.opensourcedev.playlist_organizer_API.services;
 import com.opensourcedev.playlist_organizer_API.domain_model.Playlist;
 import com.opensourcedev.playlist_organizer_API.domain_model.Rating;
 import com.opensourcedev.playlist_organizer_API.repositories.PlaylistRepository;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
 
+@Profile("test")
 @Service
 public class PlaylistServiceImpl implements PlaylistService {
 
